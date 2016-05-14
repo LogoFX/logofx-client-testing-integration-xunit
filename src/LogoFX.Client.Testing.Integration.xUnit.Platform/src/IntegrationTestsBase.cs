@@ -3,7 +3,7 @@ using LogoFX.Client.Testing.Shared;
 using Solid.Bootstrapping;
 using Solid.Practices.IoC;
 
-namespace LogoFX.Client.Tests.Integration.xUnit
+namespace LogoFX.Client.Testing.Integration.xUnit
 {
     /// <summary>
     /// Base class for client integration tests.
