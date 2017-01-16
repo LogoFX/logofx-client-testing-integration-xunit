@@ -108,9 +108,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\src\IntegrationTestsBase.cs">
-      <Link>IntegrationTestsBase.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\LogoFX.Client.Testing.Integration.xUnit.Platform.UWP.rd.xml" />
   </ItemGroup>
