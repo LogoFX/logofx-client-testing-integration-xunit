@@ -1,6 +1,6 @@
-﻿using Attest.Fake.Builders;
-using Attest.Testing.xUnit;
+﻿using Attest.Testing.xUnit;
 using LogoFX.Client.Testing.Contracts;
+using Solid.Patterns.Builder;
 
 namespace LogoFX.Client.Testing.Integration.xUnit
 {
