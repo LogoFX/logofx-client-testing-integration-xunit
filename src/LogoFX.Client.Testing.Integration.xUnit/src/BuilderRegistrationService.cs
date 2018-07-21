@@ -1,5 +1,5 @@
-﻿using Attest.Testing.xUnit;
-using LogoFX.Client.Testing.Contracts;
+﻿using Attest.Testing.Contracts;
+using Attest.Testing.xUnit;
 using Solid.Patterns.Builder;
 
 namespace LogoFX.Client.Testing.Integration.xUnit
