@@ -9,7 +9,7 @@ namespace LogoFX.Client.Testing.Integration.xUnit
     /// </summary>
     /// <seealso cref="StepsBase" />
     /// <seealso cref="IBuilderRegistrationService" />
-    public class BuilderRegistrationService : StepsBase, IBuilderRegistrationService
+    public sealed class BuilderRegistrationService : StepsBase, IBuilderRegistrationService
     {
         void IBuilderRegistrationService.RegisterBuilder<TService>(IBuilder<TService> builder)
         {
