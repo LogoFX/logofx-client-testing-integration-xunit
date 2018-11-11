@@ -12,14 +12,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\Bin\netstandard2.0\Release</OutputPath>
-    <DocumentationFile>..\..\Bin\netstandard2.0\Release\LogoFX.Client.Testing.Integration.xUnit.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="..\src\BuilderRegistrationService.cs" Link="BuilderRegistrationService.cs" />
-    <Compile Include="..\src\IntegrationTestsBase.cs" Link="IntegrationTestsBase.cs" />
-  </ItemGroup>
+    <OutputPath>..\Bin\netstandard2.0\Release</OutputPath>
+    <DocumentationFile>..\Bin\netstandard2.0\Release\LogoFX.Client.Testing.Integration.xUnit.xml</DocumentationFile>
+  </PropertyGroup>  
 
   <ItemGroup>
     <PackageReference Include="Attest.Testing.Contracts" Version="1.4.1-rc5" />
