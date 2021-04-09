@@ -23,5 +23,5 @@ and base class for unit and integration tests.</summary>
       <dependency id="Attest.Tests.xUnit" version="2.1.0-rc2" />
       <dependency id="LogoFX.Client.Tests.Shared" version="2.2.0-rc2" />
     </dependencies>
-  </metadata>  
+  </metadata>
 </package>

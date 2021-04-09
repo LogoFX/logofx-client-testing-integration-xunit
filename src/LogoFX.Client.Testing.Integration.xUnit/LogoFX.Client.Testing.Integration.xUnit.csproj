@@ -1,19 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <Version>2.2.0-rc1</Version>
-  </PropertyGroup> 
-
+    <Version>2.2.0</Version>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\Bin\netstandard\Release</OutputPath>
     <DocumentationFile>..\Bin\netstandard\Release\LogoFX.Client.Testing.Integration.xUnit.xml</DocumentationFile>
     <EmbedAllSources>True</EmbedAllSources>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>  
-
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Attest.Testing.Contracts" Version="2.1.0-rc1" />
     <PackageReference Include="Attest.Tests.Core" Version="2.1.0-rc1" />
@@ -22,5 +19,4 @@
     <PackageReference Include="Solid.Core" Version="2.2.0" />
     <PackageReference Include="Solid.Patterns.Builder" Version="2.2.0" />
   </ItemGroup>
-
 </Project>
