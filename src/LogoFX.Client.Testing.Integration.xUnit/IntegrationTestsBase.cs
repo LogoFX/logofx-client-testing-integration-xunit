@@ -1,4 +1,5 @@
-﻿using Attest.Testing.Core;
+﻿using Attest.Testing.Context;
+using Attest.Testing.Core;
 using LogoFX.Client.Testing.Shared;
 using Solid.Bootstrapping;
 using Solid.Core;
@@ -11,18 +12,21 @@ namespace LogoFX.Client.Testing.Integration.xUnit
     /// </summary>
     /// <typeparam name="TRootObject">The type of the root object.</typeparam>
     /// <typeparam name="TBootstrapper">The type of the bootstrapper.</typeparam>
-    /// <seealso cref="Attest.Testing.xUnit.IntegrationTestsBase{TRootObject, TBootstrapper}" />
+    /// <seealso cref="Attest.Testing.Integration.xUnit.IntegrationTestsBase{TRootObject, TBootstrapper}" />
     public abstract class IntegrationTestsBase<TRootObject, TBootstrapper> :
-        Attest.Testing.xUnit.IntegrationTestsBase<TRootObject, TBootstrapper>
+        Attest.Testing.Integration.xUnit.IntegrationTestsBase<TRootObject, TBootstrapper>
         where TRootObject : class
         where TBootstrapper : IInitializable, IHaveRegistrator, IHaveResolver, new()
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegrationTestsBase{TRootObject,TBootstrapper}"/> class.
         /// </summary>
+        /// <param name="keyValueDataStore">The key-value data store.</param>
         /// <param name="resolutionStyle">The resolution style.</param>
-        protected IntegrationTestsBase(InitializationParametersResolutionStyle resolutionStyle = InitializationParametersResolutionStyle.PerRequest)
-            : base(resolutionStyle)
+        protected IntegrationTestsBase(
+            IKeyValueDataStore keyValueDataStore, 
+            InitializationParametersResolutionStyle resolutionStyle = InitializationParametersResolutionStyle.PerRequest)
+            : base(keyValueDataStore, resolutionStyle)
         {
         }
 
@@ -41,9 +45,9 @@ namespace LogoFX.Client.Testing.Integration.xUnit
     /// <typeparam name="TContainerAdapter">The type of the ioc container adapter.</typeparam>
     /// <typeparam name="TRootObject">The type of the root object.</typeparam>
     /// <typeparam name="TBootstrapper">The type of the bootstrapper.</typeparam>
-    /// <seealso cref="Attest.Testing.xUnit.IntegrationTestsBase{TContainer, TContainerAdapter, TRootObject, TBootstrapper}" />
+    /// <seealso cref="Attest.Testing.Integration.xUnit.IntegrationTestsBase{TContainer, TContainerAdapter, TRootObject, TBootstrapper}" />
     public abstract class IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject, TBootstrapper> :
-        Attest.Testing.xUnit.IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject, TBootstrapper>
+        Attest.Testing.Integration.xUnit.IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject, TBootstrapper>
         where TContainerAdapter : class, IIocContainer, IIocContainerAdapter<TContainer>
         where TRootObject : class
         where TBootstrapper : IInitializable, IHaveContainer<TContainer>, new()
@@ -51,10 +55,14 @@ namespace LogoFX.Client.Testing.Integration.xUnit
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegrationTestsBase{TRootObject,TBootstrapper}"/> class.
         /// </summary>
+        /// <param name="keyValueDataStore">The key-value data store.</param>
         /// <param name="resolutionStyle">The resolution style.</param>
         protected IntegrationTestsBase(
+            IKeyValueDataStore keyValueDataStore,
             InitializationParametersResolutionStyle resolutionStyle = InitializationParametersResolutionStyle.PerRequest)
-            : base(resolutionStyle)
+            : base(
+                keyValueDataStore,
+                resolutionStyle)
         {
         }
 
